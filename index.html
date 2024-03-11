@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- VUE JS -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+  <title>VueJs</title>
+</head>
+<body>
+
+  <!-- creo id 'app' che poi vado a richiamare in js in .mount('#app')-->
+  <div id="app">
+    <input type="text" v-model="nome">
+    <input @keyup.enter="riscriviNome" type="text" v-model="nomeTemp">
+    <button @click="riscriviNome"> cambia nome</button>
+    <h1>ciao sono {{nome}}!</h1>
+
+    <!-- se è pari il numero è verde -->
+    <h2>contatore: <span :class="contatore %2 === 0 ? 'verde' : '' " > {{contatore}}</span></h2>
+
+    <h3>contatore: <span :class=" {'verde' : isEven } " > {{contatore}}</span></h3>
+
+<!-- creo un bottone in cui con il @click richiamo il contatore (incremento) -->
+    <button @click="incremento"> incremento contatore</button>
+  </div>
+
+  
+
+  <script src="script.js"></script>
+</body>
+</html>
